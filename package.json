@@ -4,7 +4,7 @@
   "description": "CSC3916 HW1",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/echotest.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/shawnmccarthy/CSC3916_HW01/issues"
   },
-  "homepage": "https://github.com/shawnmccarthy/CSC3916_HW01#readme"
+  "homepage": "https://github.com/shawnmccarthy/CSC3916_HW01#readme",
+  "dependencies": {
+    "chai": "^4.3.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1"
+  }
 }
