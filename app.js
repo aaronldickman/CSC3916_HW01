@@ -9,6 +9,7 @@ server.on("request", (request, response) => {
         .on("end", () => {
             let bodyString = body.concat().toString();
             console.log(bodyString);
+            response.statusCode = 200;
             response.end(bodyString);
         })
         .on("error", () => {
@@ -16,11 +17,14 @@ server.on("request", (request, response) => {
             response.end();
         });
     response.on("error", err => {
+        response.statusCode = 500;
         console.error(err);
     });
 });
+
 server.listen(process.env.PORT || 8008, () => {
     console.log("Server listening at 8008");
 });
 
+module.exports = server;
 //curl -d "echo" -H "Content-Type: text" -X POST http://localhost:8008
